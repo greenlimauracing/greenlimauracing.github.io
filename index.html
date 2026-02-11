@@ -5,258 +5,273 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Green Limau Racing</title>
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo.png">
 
   <style>
     /* ===== RESET ===== */
-    * { 
-      margin:0; 
-      padding:0; 
-      box-sizing:border-box; 
-      font-family: Arial, Helvetica, sans-serif; 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    body { 
-      background: #66A554; 
-      color: #0A371C; 
+    body {
+      background: #0a371c;
+      color: white;
     }
 
     /* ===== NAVBAR ===== */
-    header { 
-      background: #66A554; 
-      padding:20px; 
-      position:sticky; 
-      top:0; 
-      z-index:1000; 
-      border-bottom:3px solid #0A371C; 
-      box-shadow: 0px 2px 10px rgba(0,0,0,0.15);
+    header {
+      background: rgba(10, 55, 28, 0.95);
+      padding: 18px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 3px solid #66A554;
+      box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.4);
     }
 
-    nav { 
-      display:flex; 
-      justify-content:space-between; 
-      align-items:center; 
-      max-width:1100px; 
-      margin:auto; 
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
     }
 
-    .logo-text { 
-      font-size:22px; 
-      font-weight:bold; 
-      color:#0A371C; 
-      letter-spacing:1px; 
+    .logo-text {
+      font-size: 22px;
+      font-weight: bold;
+      color: #66A554;
+      letter-spacing: 1px;
     }
 
-    nav ul { 
-      list-style:none; 
-      display:flex; 
-      gap:20px; 
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
     }
 
-    nav ul li a { 
-      text-decoration:none; 
-      color:#0A371C; 
-      font-weight:bold; 
-      transition:0.2s; 
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: 0.2s;
     }
 
-    nav ul li a:hover { 
-      text-decoration: underline;
+    nav ul li a:hover {
+      color: #66A554;
     }
 
     /* ===== HERO ===== */
-    .hero { 
-      height:90vh; 
-      display:flex; 
-      justify-content:center; 
-      align-items:center; 
-      text-align:center; 
-      padding:30px; 
-      background:url("racingbg.jpg"); 
-      background-size:cover; 
-      background-position:center; 
-      position:relative; 
+    .hero {
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+      background: url("racingbg.jpg");
+      background-size: cover;
+      background-position: center;
+      position: relative;
     }
 
-    .hero::before { 
-      content:""; 
-      position:absolute; 
-      inset:0; 
-      background:rgba(102,165,84,0.85); 
+    /* Only a DARK overlay for readability (NOT green filter) */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
     }
 
-    .hero-content { 
-      position:relative; 
-      z-index:2; 
-      max-width:800px; 
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
     }
 
-    .hero h1 { 
-      font-size:52px; 
-      color:#0A371C; 
-      margin-bottom:10px; 
-      text-transform:uppercase;
+    .hero h1 {
+      font-size: 55px;
+      color: #66A554;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
     }
 
-    .hero p { 
-      font-size:18px; 
-      line-height:1.6; 
-      margin-bottom:25px; 
-      color:#0A371C; 
-      font-weight:bold;
+    .hero p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+      color: white;
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
     }
 
-    .btn { 
-      display:inline-block; 
-      padding:12px 22px; 
-      background:#0A371C; 
-      color:#66A554; 
-      text-decoration:none; 
-      font-weight:bold; 
-      border-radius:8px; 
-      transition:0.2s; 
-      border:2px solid #0A371C;
+    .btn {
+      display: inline-block;
+      padding: 13px 26px;
+      background: #66A554;
+      color: #0a371c;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 10px;
+      transition: 0.2s;
+      border: 2px solid #66A554;
     }
 
-    .btn:hover { 
-      background:#66A554; 
-      color:#0A371C;
-      transform:scale(1.03); 
+    .btn:hover {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      transform: scale(1.05);
     }
 
     /* ===== SECTIONS ===== */
-    section { 
-      padding:70px 20px; 
-      max-width:1100px; 
-      margin:auto; 
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
     }
 
-    .section-title { 
-      font-size:34px; 
-      margin-bottom:20px; 
-      color:#0A371C; 
-      text-align:center; 
-      text-transform:uppercase;
-      border-bottom:3px solid #0A371C;
-      display:inline-block;
-      padding-bottom:8px;
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 25px;
+      color: #66A554;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .about-text { 
-      text-align:center; 
-      color:#0A371C; 
-      font-size:17px; 
-      line-height:1.7; 
-      max-width:800px; 
-      margin:auto; 
-      font-weight:bold;
+    .about-text {
+      text-align: center;
+      font-size: 17px;
+      line-height: 1.8;
+      max-width: 850px;
+      margin: auto;
+      color: #e8ffe8;
     }
 
     /* ===== CARDS ===== */
-    .cards { 
-      display:grid; 
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); 
-      gap:20px; 
-      margin-top:40px; 
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 45px;
     }
 
-    .card { 
-      background:#66A554; 
-      padding:25px; 
-      border-radius:15px; 
-      border:3px solid #0A371C; 
-      box-shadow:0px 0px 12px rgba(0,0,0,0.15); 
-      transition:0.2s; 
+    .card {
+      background: rgba(255, 255, 255, 0.07);
+      padding: 25px;
+      border-radius: 18px;
+      border: 2px solid rgba(102, 165, 84, 0.7);
+      box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.35);
+      transition: 0.25s;
+      backdrop-filter: blur(6px);
     }
 
-    .card:hover { 
-      transform:translateY(-5px); 
-      box-shadow:0px 0px 20px rgba(10,55,28,0.35); 
+    .card:hover {
+      transform: translateY(-7px);
+      border: 2px solid #66A554;
+      box-shadow: 0px 0px 25px rgba(102, 165, 84, 0.45);
     }
 
-    .card h3 { 
-      margin-bottom:10px; 
-      color:#0A371C; 
+    .card h3 {
+      margin-bottom: 10px;
+      color: #66A554;
+      font-size: 20px;
     }
 
-    .card p, .card li { 
-      color:#0A371C; 
-      line-height:1.6; 
-      font-weight:bold;
+    .card p,
+    .card li {
+      color: #f0fff0;
+      line-height: 1.7;
+      font-size: 15px;
     }
 
     /* ===== DRIVERS ===== */
-    .drivers { 
-      display:grid; 
-      grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); 
-      gap:20px; 
-      margin-top:40px; 
+    .drivers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      margin-top: 45px;
     }
 
-    .driver { 
-      background:#66A554; 
-      padding:20px; 
-      border-radius:15px; 
-      border:3px solid #0A371C; 
-      text-align:center; 
-      transition:0.2s; 
-      box-shadow:0px 0px 12px rgba(0,0,0,0.15);
+    .driver {
+      background: rgba(255, 255, 255, 0.07);
+      padding: 20px;
+      border-radius: 18px;
+      border: 2px solid rgba(102, 165, 84, 0.7);
+      text-align: center;
+      transition: 0.25s;
+      box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(6px);
     }
 
-    .driver:hover { 
-      transform:translateY(-5px); 
-      box-shadow:0px 0px 20px rgba(10,55,28,0.35); 
+    .driver:hover {
+      transform: translateY(-7px);
+      border: 2px solid #66A554;
+      box-shadow: 0px 0px 25px rgba(102, 165, 84, 0.45);
     }
 
-    .driver img { 
-      width:100%; 
-      border-radius:12px; 
-      margin-bottom:15px; 
-      border:3px solid #0A371C;
+    .driver img {
+      width: 100%;
+      border-radius: 14px;
+      margin-bottom: 15px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
     }
 
-    .driver h3 { 
-      color:#0A371C; 
-      margin-bottom:5px; 
-      font-size:20px; 
+    .driver h3 {
+      color: #66A554;
+      margin-bottom: 5px;
+      font-size: 20px;
     }
 
-    .driver p { 
-      color:#0A371C; 
-      font-size:14px; 
-      font-weight:bold;
+    .driver p {
+      color: #eaffea;
+      font-size: 14px;
+    }
+
+    /* ===== RESULTS ===== */
+    ul {
+      margin-top: 10px;
+      padding-left: 18px;
     }
 
     /* ===== CONTACT ===== */
-    .contact-box { 
-      background:#66A554; 
-      border:3px solid #0A371C; 
-      border-radius:15px; 
-      padding:30px; 
-      max-width:700px; 
-      margin:auto; 
-      text-align:center; 
-      box-shadow:0px 0px 12px rgba(0,0,0,0.15);
+    .contact-box {
+      background: rgba(255, 255, 255, 0.07);
+      border: 2px solid rgba(102, 165, 84, 0.7);
+      border-radius: 18px;
+      padding: 35px;
+      max-width: 750px;
+      margin: auto;
+      text-align: center;
+      box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(6px);
     }
 
-    .contact-box p { 
-      color:#0A371C; 
-      margin-top:10px; 
-      line-height:1.7; 
-      font-weight:bold;
+    .contact-box h3 {
+      color: #66A554;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .contact-box p {
+      color: #eaffea;
+      margin-top: 10px;
+      line-height: 1.8;
+      font-size: 16px;
     }
 
     /* ===== FOOTER ===== */
-    footer { 
-      text-align:center; 
-      padding:25px; 
-      background:#66A554; 
-      border-top:3px solid #0A371C; 
-      color:#0A371C; 
-      font-size:14px; 
-      font-weight:bold;
-      box-shadow: 0px -2px 10px rgba(0,0,0,0.15);
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.35);
+      border-top: 3px solid #66A554;
+      color: #eaffea;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -281,7 +296,10 @@
   <div class="hero">
     <div class="hero-content">
       <h1>Green Limau Racing</h1>
-      <p>A competitive simracing team pushing for podiums, consistency, and growth.</p>
+      <p>
+        A competitive simracing team pushing for podiums, consistency, and growth.
+        Built on passion, teamwork, and a hunger to improve.
+      </p>
       <a class="btn" href="#about">Explore Our Team</a>
     </div>
   </div>
@@ -290,8 +308,9 @@
   <section id="about">
     <h2 class="section-title">About Us</h2>
     <p class="about-text">
-      Green Limau Racing is a passionate simracing team built to compete in championships, represent our drivers professionally,
-      and grow our presence in the racing community. We focus on teamwork, improvement, and achieving results on track.
+      Green Limau Racing is a passionate simracing team built to compete in championships,
+      represent our drivers professionally, and grow our presence in the racing community.
+      We focus on teamwork, improvement, and achieving results on track.
     </p>
   </section>
 
@@ -299,24 +318,29 @@
   <section id="goals">
     <h2 class="section-title">Our Goals</h2>
     <div class="cards">
+
       <div class="card">
         <h3>🏁 Race Podiums</h3>
-        <p>Our goal is to achieve podium finishes through strong strategy, clean racing, and consistent driver performance.</p>
+        <p>Our goal is to achieve podium finishes through strong strategy, clean racing, and consistent performance.</p>
       </div>
+
       <div class="card">
         <h3>📈 Team Growth</h3>
         <p>We aim to grow our brand, expand our reach in the simracing community, and build a strong reputation.</p>
       </div>
+
       <div class="card">
         <h3>🤝 Sponsorship & Media</h3>
         <p>We want to connect with sponsors, content creators, and media platforms to boost exposure for our team.</p>
       </div>
+
     </div>
   </section>
 
   <!-- DRIVERS -->
   <section id="drivers">
     <h2 class="section-title">Meet The Drivers</h2>
+
     <div class="drivers">
 
       <div class="driver">
@@ -355,6 +379,7 @@
   <!-- RESULTS -->
   <section id="results">
     <h2 class="section-title">Team Results</h2>
+
     <div class="cards">
 
       <div class="card">
@@ -381,8 +406,9 @@
   <!-- CONTACT -->
   <section id="contact">
     <h2 class="section-title">Contact Us</h2>
+
     <div class="contact-box">
-      <h3 style="color:#0A371C;">📩 Get In Touch</h3>
+      <h3>📩 Get In Touch</h3>
       <p>
         Want to sponsor us, collaborate, or join our team?<br><br>
         Email us at: <b>greenlimauracing.managment@gmail.com</b><br><br>
