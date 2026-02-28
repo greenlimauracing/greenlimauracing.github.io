@@ -1,301 +1,440 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Green Limau Racing</title>
+<meta charset="UTF-8">
+<title>Green Limau Racing</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0f0f0f;
-      color: white;
-    }
+<style>
 
-    header {
-      background: #111;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 3px solid limegreen;
-    }
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0a371c;
+  color:white;
+}
 
-    header h1 {
-      margin: 0;
-      color: limegreen;
-    }
+/* HEADER */
 
-    nav {
-      margin-top: 10px;
-    }
+header{
+  background:rgba(6,46,31,0.98);
+  padding:18px;
+  position:sticky;
+  top:0;
+  border-bottom:3px solid #66A554;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
+nav{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+}
 
-    nav a:hover {
-      color: limegreen;
-    }
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 15px;
+  font-weight:bold;
+}
 
-    section {
-      padding: 60px 20px;
-    }
+nav a:hover{
+  color:#66A554;
+}
 
-    h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      color: limegreen;
-    }
+/* HERO */
 
-    /* DRIVERS */
+.hero{
+  height:90vh;
+  background:url("racingbg.jpg") center/cover;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
 
-    .drivers {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+}
 
-    .driver-card {
-      text-align: center;
-      background: #1a1a1a;
-      padding: 20px;
-      border-radius: 15px;
-      width: 200px;
-      border: 2px solid limegreen;
-    }
+.hero-content{
+  position:relative;
+}
 
-    .driver-card img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid limegreen;
-    }
+.hero h1{
+  font-size:55px;
+  color:#66A554;
+}
 
-    /* RESULTS */
+/* SECTIONS */
 
-    .results-container {
-      max-width: 800px;
-      margin: auto;
-    }
+section{
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+}
 
-    .result-card {
-      background: #1a1a1a;
-      margin-bottom: 25px;
-      padding: 20px;
-      border-left: 5px solid limegreen;
-      border-radius: 8px;
-    }
+.section-title{
+  text-align:center;
+  color:#66A554;
+  margin-bottom:45px;
+}
 
-    .result-card ul {
-      margin-top: 10px;
-      padding-left: 20px;
-    }
+/* ABOUT */
 
-    /* CALENDAR */
+.about-text{
+  text-align:center;
+  line-height:1.8;
+  color:#eaffea;
+}
 
-    .calendar-container {
-      max-width: 1000px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
+/* GOALS */
 
-    .race-card {
-      background: #1a1a1a;
-      padding: 25px;
-      border-radius: 12px;
-      border: 2px solid limegreen;
-      transition: 0.3s;
-    }
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
 
-    .race-card:hover {
-      transform: translateY(-5px);
-      border-color: white;
-    }
+.card{
+  background:rgba(255,255,255,0.07);
+  padding:25px;
+  border-radius:18px;
+  border:2px solid rgba(102,165,84,0.7);
+}
 
-    .round-number {
-      font-size: 14px;
-      color: limegreen;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
+/* DRIVERS */
 
-    .race-name {
-      font-size: 20px;
-      font-weight: bold;
-    }
+.drivers{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:25px;
+}
 
-    .track-name {
-      font-size: 15px;
-      color: #aaa;
-      margin-top: 5px;
-    }
+.driver{
+  background:rgba(255,255,255,0.07);
+  padding:25px;
+  border-radius:18px;
+  text-align:center;
+  border:2px solid #66A554;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #111;
-      margin-top: 40px;
-      border-top: 3px solid limegreen;
-    }
-  </style>
+.driver img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  border:4px solid #66A554;
+  object-fit:cover;
+}
+
+/* RESULTS */
+
+.results-container{
+  max-width:800px;
+  margin:auto;
+}
+
+.result-card{
+  background:#062e1f;
+  padding:25px;
+  border-left:5px solid #66A554;
+  border-radius:10px;
+  margin-bottom:25px;
+}
+
+/* CALENDAR */
+
+.calendar-container{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
+
+.race-card{
+  background:#062e1f;
+  padding:20px;
+  border-radius:10px;
+  border:2px solid #66A554;
+  transition:0.3s;
+}
+
+.race-card:hover{
+  transform:translateY(-5px);
+}
+
+.round-number{
+  color:#66A554;
+  font-weight:bold;
+}
+
+.race-name{
+  font-size:18px;
+  font-weight:bold;
+  margin-top:8px;
+}
+
+.track-name{
+  color:#ccc;
+  font-size:14px;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:30px;
+  background:#062e1f;
+  border-top:3px solid #66A554;
+}
+
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Green Limau Racing</h1>
-    <nav>
-      <a href="#drivers">Drivers</a>
-      <a href="#results">Results</a>
-      <a href="#upcoming">Upcoming Races</a>
-    </nav>
-  </header>
+<header>
+<nav>
+<div style="color:#66A554;font-weight:bold;font-size:22px;">
+Green Limau Racing
+</div>
 
-  <!-- DRIVERS -->
-  <section id="drivers">
-    <h2>Our Drivers</h2>
-    <div class="drivers">
+<div>
+<a href="#about">About</a>
+<a href="#drivers">Drivers</a>
+<a href="#results">Results</a>
+<a href="#upcoming">Upcoming</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</header>
 
-      <div class="driver-card">
-        <img src="xuan.jpg" alt="Xuan Cheng">
-        <h3>Xuan Cheng</h3>
-        <p>Lead Driver</p>
-      </div>
+<!-- HERO -->
 
-    </div>
-  </section>
+<div class="hero">
+<div class="hero-content">
+<h1>Green Limau Racing</h1>
+<p>Precision. Performance. Victory.</p>
+</div>
+</div>
 
-  <!-- RESULTS -->
-  <section id="results">
-    <h2>Team Results</h2>
+<!-- ABOUT -->
 
-    <div class="results-container">
+<section id="about">
+<h2 class="section-title">About GLR</h2>
 
-      <div class="result-card">
-        <h3>VPR Downshift Okayama 350 KM</h3>
-        <p><strong>Position:</strong> P8</p>
-        <p><strong>Date:</strong> 13th December 2025</p>
-      </div>
+<p class="about-text">
+Green Limau Racing is a competitive sim racing team focused on consistency,
+teamwork and performance. We strive to represent our drivers professionally
+and push for podium finishes in every championship.
+</p>
+</section>
 
-      <div class="result-card">
-        <h3>ERGP Global Edition 19</h3>
-        <p><strong>Date:</strong> Jan 16 – Feb 06</p>
-        <p><strong>Teams Cup:</strong> P28 out of 66</p>
+<!-- GOALS -->
 
-        <strong>Bronze Class Driver Results (out of 69):</strong>
-        <ul>
-          <li>Ban – P18</li>
-          <li>Venice – P36</li>
-          <li>Raihan – P49</li>
-        </ul>
-      </div>
+<section>
+<h2 class="section-title">Our Goals</h2>
 
-    </div>
-  </section>
+<div class="cards">
+<div class="card">
+<h3>🏁 Race Podiums</h3>
+<p>Achieve strong championship finishes.</p>
+</div>
 
-  <!-- UPCOMING RACES -->
-  <section id="upcoming">
-    <h2>Upcoming Races</h2>
+<div class="card">
+<h3>📈 Team Growth</h3>
+<p>Expand our presence in the sim racing community.</p>
+</div>
 
-    <h2 style="font-size:22px;">H1GP Calendar</h2>
+<div class="card">
+<h3>🤝 Sponsorship</h3>
+<p>Build professional partnerships.</p>
+</div>
+</div>
+</section>
 
-    <div class="calendar-container">
+<!-- DRIVERS -->
 
-      <div class="race-card">
-        <div class="round-number">01</div>
-        <div class="race-name">Japanese Grand Prix</div>
-        <div class="track-name">Suzuka Circuit</div>
-      </div>
+<section id="drivers">
+<h2 class="section-title">Meet The Drivers</h2>
 
-      <div class="race-card">
-        <div class="round-number">02</div>
-        <div class="race-name">Saudi Arabian GP</div>
-        <div class="track-name">Jeddah Corniche Circuit</div>
-      </div>
+<div class="drivers">
 
-      <div class="race-card">
-        <div class="round-number">03</div>
-        <div class="race-name">Canadian Grand Prix</div>
-        <div class="track-name">Montreal Park</div>
-      </div>
+<div class="driver">
+<img src="luqman.jpg">
+<h3>Luqman Fazrul</h3>
+</div>
 
-      <div class="race-card">
-        <div class="round-number">04</div>
-        <div class="race-name">Spanish Grand Prix</div>
-        <div class="track-name">Barcelona Circuit</div>
-      </div>
+<div class="driver">
+<img src="venice.jpg">
+<h3>Adam Venice</h3>
+</div>
 
-      <div class="race-card">
-        <div class="round-number">05</div>
-        <div class="race-name">Austrian Grand Prix</div>
-        <div class="track-name">Red Bull Ring</div>
-      </div>
+<div class="driver">
+<img src="xuan.jpg">
+<h3>Chew Xuan Cheng</h3>
+</div>
 
-      <div class="race-card">
-        <div class="round-number">06</div>
-        <div class="race-name">Hungarian Grand Prix</div>
-        <div class="track-name">Hungaroring</div>
-      </div>
+<div class="driver">
+<img src="rayyan.jpg">
+<h3>Rayyan Wafiy</h3>
+</div>
 
-      <div class="race-card">
-        <div class="round-number">07</div>
-        <div class="race-name">Dutch Grand Prix</div>
-        <div class="track-name">Zandvoort</div>
-      </div>
+<div class="driver">
+<img src="raihan.jpg">
+<h3>Raihan Wong</h3>
+</div>
 
-      <div class="race-card">
-        <div class="round-number">08</div>
-        <div class="race-name">Italian Grand Prix</div>
-        <div class="track-name">Monza</div>
-      </div>
+<div class="driver">
+<img src="ban.jpg">
+<h3>Jia Jhek Ban</h3>
+</div>
 
-      <div class="race-card">
-        <div class="round-number">09</div>
-        <div class="race-name">Azerbaijan Grand Prix</div>
-        <div class="track-name">Baku City Circuit</div>
-      </div>
+</div>
+</section>
 
-      <div class="race-card">
-        <div class="round-number">10</div>
-        <div class="race-name">Singapore Grand Prix</div>
-        <div class="track-name">Marina Bay</div>
-      </div>
+<!-- RESULTS -->
 
-      <div class="race-card">
-        <div class="round-number">11</div>
-        <div class="race-name">American Grand Prix</div>
-        <div class="track-name">COTA</div>
-      </div>
+<section id="results">
+<h2 class="section-title">Team Results</h2>
 
-      <div class="race-card">
-        <div class="round-number">12</div>
-        <div class="race-name">Mexican Grand Prix</div>
-        <div class="track-name">Mexico</div>
-      </div>
+<div class="results-container">
 
-      <div class="race-card">
-        <div class="round-number">13</div>
-        <div class="race-name">Brazilian Grand Prix</div>
-        <div class="track-name">Sao Paulo</div>
-      </div>
+<div class="result-card">
+<h3>VPR Downshift Okayama 350 KM</h3>
+<p>Position: P8</p>
+<p>Date: 13th December 2025</p>
+</div>
 
-      <div class="race-card">
-        <div class="round-number">14</div>
-        <div class="race-name">Abu Dhabi Grand Prix</div>
-        <div class="track-name">Yas Marina</div>
-      </div>
+<div class="result-card">
+<h3>ERGP Global Edition 19</h3>
+<p>Teams Cup: P28 out of 66</p>
 
-    </div>
-  </section>
+<p>Bronze Class Driver Results:</p>
+<ul>
+<li>Ban – P18</li>
+<li>Venice – P36</li>
+<li>Raihan – P49</li>
+</ul>
 
-  <footer>
-    © 2026 GLR Motorsport Enterprises
-  </footer>
+</div>
+
+</div>
+</section>
+
+<!-- UPCOMING -->
+
+<section id="upcoming">
+<h2 class="section-title">Upcoming Races</h2>
+
+<h3 style="text-align:center;color:#66A554;">H1GP Calendar</h3>
+
+<div class="calendar-container">
+
+<div class="race-card">
+<div class="round-number">01</div>
+<div class="race-name">Japanese Grand Prix</div>
+<div class="track-name">Suzuka Circuit</div>
+</div>
+
+<div class="race-card">
+<div class="round-number">02</div>
+<div class="race-name">Saudi Arabian GP</div>
+<div class="track-name">Jeddah Corniche Circuit</div>
+</div>
+
+<div class="race-card">
+<div class="round-number">03</div>
+<div class="race-name">Canadian Grand Prix</div>
+<div class="track-name">Montreal Park</div>
+</div>
+
+<div class="race-card">
+<div class="round-number">04</div>
+<div class="race-name">Spanish Grand Prix</div>
+<div class="track-name">Barcelona Circuit</div>
+</div>
+
+<div class="race-card">
+<div class="round-number">05</div>
+<div class="race-name">Austrian Grand Prix</div>
+<div class="track-name">Red Bull Ring</div>
+</div>
+
+<div class="race-card">
+<div class="round-number">06</div>
+<div class="race-name">Hungarian Grand Prix</div>
+<div class="track-name">Hungaroring</div>
+</div>
+
+<div class="race-card">
+<div class="round-number">07</div>
+<div class="race-name">Dutch Grand Prix</div>
+<div class="track-name">Zandvoort</div>
+</div>
+
+<div class="race-card">
+<div class="round-number">08</div>
+<div class="race-name">Italian Grand Prix</div>
+<div class="track-name">Monza</div>
+</div>
+
+<div class="race-card">
+<div class="round-number">09</div>
+<div class="race-name">Azerbaijan Grand Prix</div>
+<div class="track-name">Baku City Circuit</div>
+</div>
+
+<div class="race-card">
+<div class="round-number">10</div>
+<div class="race-name">Singapore Grand Prix</div>
+<div class="track-name">Marina Bay</div>
+</div>
+
+<div class="race-card">
+<div class="round-number">11</div>
+<div class="race-name">American Grand Prix</div>
+<div class="track-name">COTA</div>
+</div>
+
+<div class="race-card">
+<div class="round-number">12</div>
+<div class="race-name">Mexican Grand Prix</div>
+<div class="track-name">Mexico</div>
+</div>
+
+<div class="race-card">
+<div class="round-number">13</div>
+<div class="race-name">Brazilian Grand Prix</div>
+<div class="track-name">Sao Paulo</div>
+</div>
+
+<div class="race-card">
+<div class="round-number">14</div>
+<div class="race-name">Abu Dhabi Grand Prix</div>
+<div class="track-name">Yas Marina</div>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+<h2 class="section-title">Contact</h2>
+<p style="text-align:center">
+greenlimauracing.managment@gmail.com<br>
+@green_limau_racing
+</p>
+</section>
+
+<footer>
+© 2026 GLR Motorsport Enterprise
+</footer>
 
 </body>
 </html>
