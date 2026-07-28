@@ -1,441 +1,731 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<title>Green Limau Racing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Green Limau Racing | GLR</title>
 
 <style>
 
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
 body{
-  margin:0;
-  font-family:Arial;
-  background:#0a371c;
-  color:white;
+
+    background:#66A554;
+    color:white;
+
 }
 
-/* HEADER */
 
-header{
-  background:rgba(6,46,31,0.98);
-  padding:18px;
-  position:sticky;
-  top:0;
-  border-bottom:3px solid #66A554;
-}
+/* NAVBAR */
+
 
 nav{
-  max-width:1100px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
+
+    position:fixed;
+
+    top:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:85%;
+
+    padding:15px 35px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+
+    background:rgba(102,165,84,0.85);
+
+    border:2px solid white;
+
+    border-radius:20px;
+
+    backdrop-filter:blur(10px);
+
+    z-index:1000;
+
 }
+
+
+
+.logo-img{
+
+    width:85px;
+
+    height:auto;
+
+}
+
+
+
+nav ul{
+
+    display:flex;
+
+    gap:30px;
+
+    list-style:none;
+
+}
+
+
 
 nav a{
-  color:white;
-  text-decoration:none;
-  margin:0 15px;
-  font-weight:bold;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+
 }
 
+
+
 nav a:hover{
-  color:#66A554;
+
+    opacity:.7;
+
 }
+
+
 
 /* HERO */
 
+
 .hero{
-  height:90vh;
-  background:url("racingbg.jpg") center/cover;
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
+
+
+    height:100vh;
+
+
+    display:flex;
+
+    align-items:center;
+
+
+    padding:0 8%;
+
+
+    background:
+
+    linear-gradient(
+
+    rgba(102,165,84,.7),
+
+    rgba(102,165,84,.9)
+
+    ),
+
+    url("racingbg.png");
+
+
+    background-size:cover;
+
+    background-position:center;
+
+
 }
 
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.55);
-}
+
 
 .hero-content{
-  position:relative;
+
+    max-width:700px;
+
 }
+
+
+
+.hero-logo{
+
+    width:230px;
+
+    margin-bottom:30px;
+
+}
+
+
 
 .hero h1{
-  font-size:55px;
-  color:#66A554;
+
+
+    font-size:80px;
+
+    font-weight:900;
+
+    line-height:.95;
+
+    letter-spacing:5px;
+
+
 }
 
-/* SECTIONS */
+
+
+.hero p{
+
+
+    margin-top:25px;
+
+    font-size:22px;
+
+
+}
+
+
+
+.btn{
+
+
+    display:inline-block;
+
+
+    margin-top:40px;
+
+
+    padding:15px 40px;
+
+
+    background:white;
+
+
+    color:#66A554;
+
+
+    text-decoration:none;
+
+
+    font-weight:bold;
+
+
+    border-radius:10px;
+
+
+    border:2px solid white;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.btn:hover{
+
+
+    background:#66A554;
+
+
+    color:white;
+
+
+    transform:translateY(-5px);
+
+
+}
+
+
+
+/* GENERAL */
+
 
 section{
-  padding:80px 20px;
-  max-width:1100px;
-  margin:auto;
+
+
+    padding:100px 8%;
+
+
 }
 
-.section-title{
-  text-align:center;
-  color:#66A554;
-  margin-bottom:45px;
+
+
+.title{
+
+
+    font-size:45px;
+
+
+    font-weight:900;
+
+
+    margin-bottom:45px;
+
+
+    text-transform:uppercase;
+
+
 }
+
+
 
 /* ABOUT */
 
-.about-text{
-  text-align:center;
-  line-height:1.8;
-  color:#eaffea;
+
+.about{
+
+
+    display:grid;
+
+
+    grid-template-columns:1fr 1fr;
+
+
+    gap:50px;
+
+
 }
 
-/* GOALS */
+
+
+.about p{
+
+
+    font-size:18px;
+
+
+    line-height:1.8;
+
+
+}
+
+
+
+.stats{
+
+
+    display:grid;
+
+
+    grid-template-columns:repeat(3,1fr);
+
+
+    gap:20px;
+
+
+}
+
+
+
+.box{
+
+
+    background:#579444;
+
+
+    border:2px solid white;
+
+
+    border-radius:20px;
+
+
+    padding:35px;
+
+
+    transition:.35s;
+
+
+}
+
+
+
+.box:hover{
+
+
+    transform:translateY(-10px);
+
+
+    box-shadow:0 0 25px white;
+
+
+}
+
+
+
+.box h2{
+
+
+    font-size:40px;
+
+
+}
+
+
+
+.box p{
+
+
+    margin-top:10px;
+
+
+}
+
+
+
+/* DIVISIONS */
+
 
 .cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
+
+
+    display:grid;
+
+
+    grid-template-columns:repeat(3,1fr);
+
+
+    gap:30px;
+
+
 }
+
+
 
 .card{
-  background:rgba(255,255,255,0.07);
-  padding:25px;
-  border-radius:18px;
-  border:2px solid rgba(102,165,84,0.7);
+
+
+    background:#579444;
+
+
+    border:2px solid white;
+
+
+    border-radius:20px;
+
+
+    padding:40px;
+
+
+    transition:.35s;
+
+
+    cursor:pointer;
+
+
 }
 
-/* DRIVERS */
 
-.drivers{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:25px;
+
+.card:hover{
+
+
+    transform:translateY(-12px) scale(1.03);
+
+
+    box-shadow:0 0 35px white;
+
+
 }
 
-.driver{
-  background:rgba(255,255,255,0.07);
-  padding:25px;
-  border-radius:18px;
-  text-align:center;
-  border:2px solid #66A554;
+
+
+.card h3{
+
+
+    font-size:28px;
+
+
+    margin-bottom:15px;
+
+
 }
 
-.driver img{
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  border:4px solid #66A554;
-  object-fit:cover;
+
+
+.card p{
+
+
+    line-height:1.7;
+
+
 }
 
-/* RESULTS */
 
-.results-container{
-  max-width:800px;
-  margin:auto;
+
+/* MOBILE */
+
+
+@media(max-width:900px){
+
+
+nav ul{
+
+    display:none;
+
 }
 
-.result-card{
-  background:#062e1f;
-  padding:25px;
-  border-left:5px solid #66A554;
-  border-radius:10px;
-  margin-bottom:25px;
+
+.hero h1{
+
+    font-size:50px;
+
 }
 
-/* CALENDAR */
 
-.calendar-container{
-  max-width:1000px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:20px;
+.hero-logo{
+
+    width:160px;
+
 }
 
-.race-card{
-  background:#062e1f;
-  padding:20px;
-  border-radius:10px;
-  border:2px solid #66A554;
-  transition:0.3s;
+
+.about{
+
+    grid-template-columns:1fr;
+
 }
 
-.race-card:hover{
-  transform:translateY(-5px);
+
+.cards{
+
+    grid-template-columns:1fr;
+
 }
 
-.round-number{
-  color:#66A554;
-  font-weight:bold;
+
+.stats{
+
+    grid-template-columns:1fr;
+
 }
 
-.race-name{
-  font-size:18px;
-  font-weight:bold;
-  margin-top:8px;
+
 }
 
-.track-name{
-  color:#ccc;
-  font-size:14px;
-}
-
-/* FOOTER */
-
-footer{
-  text-align:center;
-  padding:30px;
-  background:#062e1f;
-  border-top:3px solid #66A554;
-}
 
 </style>
+
 </head>
+
 
 <body>
 
-<header>
-<nav>
-<div style="color:#66A554;font-weight:bold;font-size:22px;">
-Green Limau Racing
-</div>
 
-<div>
-<a href="#about">About</a>
-<a href="#drivers">Drivers</a>
-<a href="#results">Results</a>
-<a href="#upcoming">Upcoming</a>
-<a href="#contact">Contact</a>
-</div>
+<!-- NAVIGATION -->
+
+
+<nav>
+
+
+<img src="logo.png" class="logo-img">
+
+
+<ul>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#divisions">Divisions</a></li>
+
+<li><a href="#drivers">Drivers</a></li>
+
+<li><a href="#academy">Academy</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+
 </nav>
-</header>
+
+
+
 
 <!-- HERO -->
 
-<div class="hero">
+
+<section class="hero">
+
+
 <div class="hero-content">
-<h1>Green Limau Racing</h1>
-<p>Malaysia's Newest Simracing Team</p>
+
+
+<img src="logo.png" class="hero-logo">
+
+
+<h1>
+
+GREEN<br>
+
+LIMAU<br>
+
+RACING
+
+</h1>
+
+
+<p>
+Developing Malaysia's next generation of racing drivers.
+</p>
+
+
+<a href="#about" class="btn">
+Explore GLR
+</a>
+
+
 </div>
-</div>
+
+
+</section>
+
+
+
 
 <!-- ABOUT -->
 
-<section id="about">
-<h2 class="section-title">About GLR</h2>
 
-<p class="about-text">
-Green Limau Racing is a competitive sim racing team focused on consistency,
-teamwork and performance. We strive to represent our drivers professionally
-and push for podium finishes in every championship.
+<section id="about">
+
+
+<h2 class="title">
+About GLR
+</h2>
+
+
+<div class="about">
+
+
+<p>
+
+Green Limau Racing is a Malaysian motorsport organisation founded in 2025.
+
+Based in Selangor, Malaysia, GLR focuses on developing drivers through sim racing, karting and professional driver development.
+
+Our mission is to create a pathway for talented drivers to progress from grassroots motorsport into real-world racing.
+
 </p>
+
+
+
+<div class="stats">
+
+
+<div class="box">
+
+<h2>2025</h2>
+
+<p>Founded</p>
+
+</div>
+
+
+
+<div class="box">
+
+<h2>MY</h2>
+
+<p>Malaysia</p>
+
+</div>
+
+
+
+<div class="box">
+
+<h2>3</h2>
+
+<p>Divisions</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
 </section>
 
-<!-- GOALS -->
 
-<section>
-<h2 class="section-title">Our Goals</h2>
+
+
+<!-- DIVISIONS -->
+
+
+<section id="divisions">
+
+
+<h2 class="title">
+Our Divisions
+</h2>
+
 
 <div class="cards">
-<div class="card">
-<h3>🏁 Race Podiums</h3>
-<p>Achieve strong championship finishes.</p>
-</div>
+
+
 
 <div class="card">
-<h3>📈 Team Growth</h3>
-<p>Expand our presence in the sim racing community.</p>
-</div>
 
-<div class="card">
-<h3>🤝 Sponsorship</h3>
-<p>Build professional partnerships.</p>
-</div>
-</div>
-</section>
+<h3>Karting</h3>
 
-<!-- DRIVERS -->
+<p>
 
-<section id="drivers">
-<h2 class="section-title">Meet The Drivers</h2>
+Grassroots motorsport development focused on building future racing talent.
 
-<div class="drivers">
-
-<div class="driver">
-<img src="luqman.jpg">
-<h3>Luqman Fazrul</h3>
-</div>
-
-<div class="driver">
-<img src="venice.jpg">
-<h3>Adam Venice</h3>
-</div>
-
-<div class="driver">
-<img src="xuan.jpg">
-<h3>Chew Xuan Cheng</h3>
-</div>
-
-<div class="driver">
-<img src="rayyan.jpg">
-<h3>Rayyan Wafiy</h3>
-</div>
-
-<div class="driver">
-<img src="raihan.jpg">
-<h3>Raihan Wong</h3>
-</div>
-
-<div class="driver">
-<img src="ban.jpg">
-<h3>Jia Jhek Ban</h3>
-</div>
-
-</div>
-</section>
-
-<!-- RESULTS -->
-
-<section id="results">
-<h2 class="section-title">Team Results</h2>
-
-<div class="results-container">
-
-<div class="result-card">
-<h3>VPR Downshift Okayama 350 KM</h3>
-<p>Position: P8</p>
-<p>Date: 13th December 2025</p>
-</div>
-
-<div class="result-card">
-<h3>ERGP Global Edition 19</h3>
-<p>Teams Cup: P28 out of 66</p>
-
-<p>Bronze Class Driver Results:</p>
-<ul>
-<li>Ban – P18</li>
-<li>Venice – P36</li>
-<li>Raihan – P49</li>
-</ul>
-
-</div>
-
-</div>
-</section>
-
-<!-- UPCOMING -->
-
-<section id="upcoming">
-<h2 class="section-title">Upcoming Races</h2>
-
-<h3 style="text-align:center;color:#66A554;">H1GP Calendar</h3>
-
-<div class="calendar-container">
-
-<div class="race-card">
-<div class="round-number">01</div>
-<div class="race-name">Japanese Grand Prix</div>
-<div class="track-name">Suzuka Circuit</div>
-</div>
-
-<div class="race-card">
-<div class="round-number">02</div>
-<div class="race-name">Saudi Arabian GP</div>
-<div class="track-name">Jeddah Corniche Circuit</div>
-</div>
-
-<div class="race-card">
-<div class="round-number">03</div>
-<div class="race-name">Canadian Grand Prix</div>
-<div class="track-name">Montreal Park</div>
-</div>
-
-<div class="race-card">
-<div class="round-number">04</div>
-<div class="race-name">Spanish Grand Prix</div>
-<div class="track-name">Barcelona Circuit</div>
-</div>
-
-<div class="race-card">
-<div class="round-number">05</div>
-<div class="race-name">Austrian Grand Prix</div>
-<div class="track-name">Red Bull Ring</div>
-</div>
-
-<div class="race-card">
-<div class="round-number">06</div>
-<div class="race-name">Hungarian Grand Prix</div>
-<div class="track-name">Hungaroring</div>
-</div>
-
-<div class="race-card">
-<div class="round-number">07</div>
-<div class="race-name">Dutch Grand Prix</div>
-<div class="track-name">Zandvoort</div>
-</div>
-
-<div class="race-card">
-<div class="round-number">08</div>
-<div class="race-name">Italian Grand Prix</div>
-<div class="track-name">Monza</div>
-</div>
-
-<div class="race-card">
-<div class="round-number">09</div>
-<div class="race-name">Azerbaijan Grand Prix</div>
-<div class="track-name">Baku City Circuit</div>
-</div>
-
-<div class="race-card">
-<div class="round-number">10</div>
-<div class="race-name">Singapore Grand Prix</div>
-<div class="track-name">Marina Bay</div>
-</div>
-
-<div class="race-card">
-<div class="round-number">11</div>
-<div class="race-name">American Grand Prix</div>
-<div class="track-name">COTA</div>
-</div>
-
-<div class="race-card">
-<div class="round-number">12</div>
-<div class="race-name">Mexican Grand Prix</div>
-<div class="track-name">Mexico</div>
-</div>
-
-<div class="race-card">
-<div class="round-number">13</div>
-<div class="race-name">Brazilian Grand Prix</div>
-<div class="track-name">Sao Paulo</div>
-</div>
-
-<div class="race-card">
-<div class="round-number">14</div>
-<div class="race-name">Abu Dhabi Grand Prix</div>
-<div class="track-name">Yas Marina</div>
-</div>
-
-</div>
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact">
-<h2 class="section-title">Contact</h2>
-<p style="text-align:center">
-greenlimauracing.managment@gmail.com<br>
-@green_limau_racing
 </p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>Sim Racing</h3>
+
+<p>
+
+Competitive esports racing and driver training using professional simulation platforms.
+
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>GLR Academy</h3>
+
+<p>
+
+A structured driver development programme focused on skill, racecraft and professionalism.
+
+</p>
+
+</div>
+
+
+
+</div>
+
+
 </section>
-
-<footer>
-© 2026 GLR Motorsport Enterprise
-</footer>
-
-</body>
-</html>
- 
