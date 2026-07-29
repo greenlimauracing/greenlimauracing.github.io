@@ -740,13 +740,17 @@ Our Drivers
 </h2>
 
 
-<div class="cards">
+<div class="driver-grid">
 
 
-<div class="card driver">
+<!-- LUQMAN -->
 
+<div class="driver-card">
 
-<div class="driver-photo">
+<div class="driver-image">
+
+<img src="luqman.png" alt="Luqman Fazrul">
+
 </div>
 
 
@@ -754,10 +758,11 @@ Our Drivers
 Luqman Fazrul
 </h3>
 
-
 <p>
 Founder / Driver
-<br>
+</p>
+
+<p>
 Sim Racing & Karting
 </p>
 
@@ -767,10 +772,15 @@ Sim Racing & Karting
 
 
 
-<div class="card driver">
 
+<!-- ADAM VENICE -->
 
-<div class="driver-photo">
+<div class="driver-card">
+
+<div class="driver-image">
+
+<img src="venice.png" alt="Adam Venice">
+
 </div>
 
 
@@ -778,10 +788,11 @@ Sim Racing & Karting
 Adam Venice
 </h3>
 
-
 <p>
 Driver
-<br>
+</p>
+
+<p>
 Sim Racing
 </p>
 
@@ -791,10 +802,15 @@ Sim Racing
 
 
 
-<div class="card driver">
 
+<!-- CHEW XUAN CHENG -->
 
-<div class="driver-photo">
+<div class="driver-card">
+
+<div class="driver-image">
+
+<img src="xuancheng.png" alt="Chew Xuan Cheng">
+
 </div>
 
 
@@ -802,10 +818,11 @@ Sim Racing
 Chew Xuan Cheng
 </h3>
 
-
 <p>
 Driver
-<br>
+</p>
+
+<p>
 Sim Racing
 </p>
 
@@ -816,10 +833,14 @@ Sim Racing
 
 
 
-<div class="card driver">
+<!-- SHAQEEL -->
 
+<div class="driver-card">
 
-<div class="driver-photo">
+<div class="driver-image">
+
+<img src="shaqeel.png" alt="Shaqeel Shafique">
+
 </div>
 
 
@@ -827,10 +848,11 @@ Sim Racing
 Shaqeel Shafique
 </h3>
 
-
 <p>
 Driver
-<br>
+</p>
+
+<p>
 Sim Racing
 </p>
 
@@ -841,10 +863,14 @@ Sim Racing
 
 
 
-<div class="card driver">
+<!-- RAYYAN -->
 
+<div class="driver-card">
 
-<div class="driver-photo">
+<div class="driver-image">
+
+<img src="rayyan.png" alt="Rayyan Wafiy">
+
 </div>
 
 
@@ -852,10 +878,11 @@ Sim Racing
 Rayyan Wafiy
 </h3>
 
-
 <p>
 Driver
-<br>
+</p>
+
+<p>
 Sim Racing
 </p>
 
@@ -866,10 +893,14 @@ Sim Racing
 
 
 
-<div class="card driver">
+<!-- RAIHAN -->
 
+<div class="driver-card">
 
-<div class="driver-photo">
+<div class="driver-image">
+
+<img src="raihan.png" alt="Raihan Wong">
+
 </div>
 
 
@@ -877,10 +908,11 @@ Sim Racing
 Raihan Wong
 </h3>
 
-
 <p>
 Driver
-<br>
+</p>
+
+<p>
 Sim Racing
 </p>
 
@@ -888,10 +920,124 @@ Sim Racing
 </div>
 
 
+
 </div>
 
 
 </section>
+
+
+
+
+
+<style>
+
+
+.driver-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+
+
+.driver-card{
+
+background:#579444;
+
+border:2px solid white;
+
+border-radius:20px;
+
+padding:25px;
+
+text-align:center;
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+
+
+.driver-card:hover{
+
+transform:translateY(-12px) scale(1.03);
+
+box-shadow:0 0 35px white;
+
+}
+
+
+
+.driver-image{
+
+width:100%;
+
+height:300px;
+
+overflow:hidden;
+
+border-radius:15px;
+
+border:2px solid white;
+
+margin-bottom:20px;
+
+background:#4d863e;
+
+}
+
+
+
+.driver-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+
+
+.driver-card h3{
+
+font-size:25px;
+
+margin-bottom:10px;
+
+}
+
+
+
+.driver-card p{
+
+font-size:16px;
+
+}
+
+
+
+@media(max-width:900px){
+
+
+.driver-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+}
+
+</style>
 
 
 <!-- ACADEMY -->
